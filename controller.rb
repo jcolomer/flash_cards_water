@@ -8,9 +8,7 @@ class Controller
 
     get_input_from_file
 
-    shuffle_objects_array
-
-    until user_input == "exit" || objects_array.empty?
+    until user_input == "exit" || ALL_CARDS.empty?
         play_next_round
 
           get_next_card
