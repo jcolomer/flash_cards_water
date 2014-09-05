@@ -12,52 +12,51 @@
 #card objects card.definition / card.answer
 
 
+class View
 
-def introduction
-  puts "Welcome to Flash Cards. Hit enter to start."
+  def self.welcome_message
+    puts "Welcome to Flash Cards. Hit enter to start."
     if gets.chomp.length == 0
       puts "Getting your first question..."
-      get_new_question
-      display_question
     else
-      introduction
+      welcome_message
     end
 
-end
-
-def get_new_question
-  #ping controller
-end
+  end
 
 
-def display_question(question)
-  puts question
-  get_answer
-end
+  def self.display_definition_to_user(card)
+    puts card.definition
+  end
 
-def get_answer
-  user_response = gets.chomp.downcase!
-  #send to check answer method
-end
+  def self.get_user_input
+    user_response = gets.chomp.downcase!
+  end
 
-def correct_answer?
-  if answer
-    get_new_method
-    display_question
-  else
-    puts "Sorry, that was not the answer we were looking for...please try again."
-    display_question
+  def self.congratulations_message
+    puts "Congratulations! You are correct."
+
+  end
+
+  def self.try_again_message
+    puts "Sorry, that was not correct. Please try again."
+  end
+
+
+  def self.display_exit_message
+      puts "Thanks for playing Flash Cards!"
   end
 end
 
+#-----TEST CARD OBJECT-------------
+# class Card
+#   attr_reader :answer, :definition
+#   def initialize(definition, answer)
+#     @definition = definition
+#     @answer = answer
+#   end
+# end
 
-def end_of_game
-  if game_over
-  puts "Thanks for playing Flash Cards!"
-  end
-end
 
-
-p introduction
-
-
+# card1 = Card.new("How many legs does a spider have?", "eight")
+# View.display_definition_to_user(card1)
