@@ -35,5 +35,7 @@ attr_accessor :user_input
 
   def self.display_exit_message
       puts "Thanks for playing Flash Cards!"
+      `open celebrate.jpg`
+      `say "Lets celebrate. Party time!"`
   end
 end
