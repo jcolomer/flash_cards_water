@@ -1,0 +1,2 @@
+Designates code that must be run unconditionally at the beginning of the program before any other.
+BEGIN

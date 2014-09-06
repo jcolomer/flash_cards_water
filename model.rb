@@ -1,6 +1,6 @@
 class Model
   attr_accessor :all_cards
-@all_cards = Array.new
+  @all_cards = Array.new
 
   def self.parse
     file = File.open("flashcard_samples.txt").readlines
@@ -18,6 +18,10 @@ class Model
   def self.pick_question
     @all_cards.shuffle!
     @all_cards.pop
+  end
+
+  def self.check_deck_empty?
+    @all_cards.empty?
   end
 end
 
